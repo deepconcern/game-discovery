@@ -5,8 +5,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "./scripts/lint.sh",
-    "prestart": "tsc",
+    "build": "./scripts/build.sh",
+    "prestart": "./scripts/prestart.sh",
     "start": "node dist/index.js"
   },
   "dependencies": {
@@ -25,10 +25,6 @@
     "@types/express": "^4.17.6",
     "@types/node": "^13.13.4",
     "@types/pug": "^2.0.4",
-    "@typescript-eslint/eslint-plugin": "^2.31.0",
-    "@typescript-eslint/parser": "^2.31.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-node": "^11.1.0",
     "typescript": "^3.8.3"
   }
 }
