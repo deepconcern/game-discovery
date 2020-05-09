@@ -1,0 +1,12 @@
+type Game {
+    backgroundImage: String
+    id: ID!
+    rating: Float
+    ratings: String
+    title: String!
+    croppedBackgroundImage(width: Int!, height: Int!): String
+}
+
+type Query {
+    games(searchQuery: String, limit: Int = 20): [Game!]!
+}

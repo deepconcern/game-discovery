@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "outDir": "dist",
+        "rootDir": "src",
+        "sourceMap": true,
+    },
+    "extends": "../../tsconfig.json"
+}
