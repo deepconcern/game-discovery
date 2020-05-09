@@ -4,6 +4,8 @@
         "lib": [ "DOM", "ES2020" ],
         "module": "CommonJS",
         "moduleResolution": "node",
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
         "strict": true,
         "target": "ES2020",
     }

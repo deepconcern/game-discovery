@@ -13,6 +13,7 @@ module.exports = {
     'node'
     ],
     rules: {
+        'node/no-extraneous-import': 'off',
         'node/no-missing-import': ['error', {
             tryExtensions: ['.js', '.json', '.node', '.ts', '.d.ts']
         }],
