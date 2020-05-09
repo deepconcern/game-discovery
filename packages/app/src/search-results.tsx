@@ -55,3 +55,5 @@ export const SearchResults: FC = () => {
         </div>
     );
 };
+
+SearchResults.displayName = 'SearchResults';

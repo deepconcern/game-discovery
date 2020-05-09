@@ -14,6 +14,7 @@ module.exports = {
         'react',
     ],
     rules: {
+        'react/display-name': 'off',
         'react/prop-types': 'off',
     },
     settings: {

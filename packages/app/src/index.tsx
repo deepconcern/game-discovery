@@ -1,6 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
+import Loadable from 'react-loadable';
 
-import { App } from './app';
+const AppLoadable = Loadable({
+    loader: () => import(/* webpackPrefetch: true, webpackChunkName: "app" */ './app'),
+    loading: () => null,
+    render: ({ App }) => (
+        <App/>
+    )
+})
 
-render(<App />, document.getElementById('application'));
+render(<AppLoadable />, document.getElementById('application'));

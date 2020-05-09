@@ -4,6 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "app:build": "yarn workspace @game-discovery/app build",
     "app:codegen": "yarn workspace @game-discovery/app codegen",
     "app:lint": "yarn workspace @game-discovery/app lint",
     "app:start": "yarn workspace @game-discovery/app start",
