@@ -4,8 +4,8 @@ import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import React, { FC } from 'react';
 
-import { GamesSearchBar, GamesSearchProvider } from './games-search';
-import { SearchResults } from './search-results';
+import { GamesSearchBar, GamesSearchProvider } from '../games-search';
+import { SearchResults } from '../search-results';
 
 console.log('process', process);
 

@@ -5,7 +5,6 @@ const commonConfiguration = require('./webpack.common');
 
 module.exports = merge(commonConfiguration, {
     devtool: 'source-map',
-    mode: 'production',
     optimization: {
         splitChunks: {
             chunks: 'all',

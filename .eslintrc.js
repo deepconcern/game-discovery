@@ -19,11 +19,11 @@ module.exports = {
             },
             extends: [
                 'eslint:recommended',
-                'plugin:@typescript-eslint/eslint-recommended',
-                'plugin:@typescript-eslint/recommended',
+                'plugin:node/recommended',
             ],
             files: [
                 './packages/*/*.js',
+                './packages/*/scripts/*.js',
                 './*.js'
             ],
             plugins: [

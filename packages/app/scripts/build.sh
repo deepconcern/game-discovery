@@ -2,4 +2,4 @@
 
 set -eux
 
-npx webpack --config webpack.prod.js
+NODE_ENV=production npx webpack --config webpack.prod.js

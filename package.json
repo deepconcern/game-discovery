@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=12.13.1"
+  },
   "scripts": {
     "app:build": "yarn workspace @game-discovery/app build",
     "app:codegen": "yarn workspace @game-discovery/app codegen",
+    "app:deploy": "yarn workspace @game-discovery/app deploy",
     "app:start": "yarn workspace @game-discovery/app start",
     "build-image": "./scripts/build-image.sh",
     "clean": "rm -rf node_modules/ && rm -rf packages/*/node_modules/",
