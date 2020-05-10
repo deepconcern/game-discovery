@@ -7,9 +7,11 @@ import React, { FC } from 'react';
 import { GamesSearchBar, GamesSearchProvider } from './games-search';
 import { SearchResults } from './search-results';
 
+console.log('process', process);
+
 const client = new ApolloClient({
     cache: new InMemoryCache(),
-    link: new HttpLink({ uri: 'http://localhost:4000' }),
+    link: new HttpLink({ uri: `${process.env['GAME_DISCOVERY_SERVER_URL']}` }),
 });
 
 export const App: FC = () => {

@@ -6,12 +6,12 @@
   "scripts": {
     "app:build": "yarn workspace @game-discovery/app build",
     "app:codegen": "yarn workspace @game-discovery/app codegen",
-    "app:lint": "yarn workspace @game-discovery/app lint",
     "app:start": "yarn workspace @game-discovery/app start",
+    "build-image": "./scripts/build-image.sh",
     "clean": "rm -rf node_modules/ && rm -rf packages/*/node_modules/",
     "lint": "./scripts/lint.sh",
     "schema:codegen": "yarn workspace @game-discovery/schema codegen",
-    "server:lint": "yarn workspace @game-discovery/server lint",
+    "server:build": "yarn workspace @game-discovery/server build",
     "server:start": "yarn workspace @game-discovery/server start"
   },
   "workspaces": [
