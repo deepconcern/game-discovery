@@ -13,6 +13,7 @@
     "app:start": "yarn workspace @game-discovery/app start",
     "build-image": "./scripts/build-image.sh",
     "clean": "rm -rf node_modules/ && rm -rf packages/*/node_modules/",
+    "format": "./scripts/format/sh",
     "lint": "./scripts/lint.sh",
     "schema:codegen": "yarn workspace @game-discovery/schema codegen",
     "server:build": "yarn workspace @game-discovery/server build",

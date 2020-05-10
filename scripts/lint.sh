@@ -2,4 +2,4 @@
 
 set -eux
 
-eslint . --ext .js,.jsx,.mjs,.ts,.tsx --fix
+eslint . --ext .js,.jsx,.mjs,.ts,.tsx
