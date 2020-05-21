@@ -6,11 +6,11 @@
   "private": true,
   "scripts": {
     "build": "./scripts/build.sh",
+    "codegen": "./scripts/codegen.sh",
     "prestart": "./scripts/prestart.sh",
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@game-discovery/schema": "*",
     "@types/uuid": "^7.0.3",
     "apollo-datasource-rest": "^0.8.1",
     "apollo-server": "^2.13.0",
@@ -22,6 +22,9 @@
     "uuid": "^8.0.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.13.4",
+    "@graphql-codegen/typescript": "1.13.4",
+    "@graphql-codegen/typescript-resolvers": "1.13.4",
     "@types/cors": "^2.8.6",
     "@types/express": "^4.17.6",
     "@types/node": "^13.13.4",

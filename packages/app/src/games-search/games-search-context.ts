@@ -1,5 +1,8 @@
-import { Game } from '@game-discovery/schema';
 import { createContext } from 'react';
+
+import {
+    GamesQuery_games as Game
+} from '../graphql-operations/GamesQuery';
 
 export type GamesSearchData = {
     error?: Error | null,

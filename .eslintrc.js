@@ -9,8 +9,7 @@ module.exports = {
     ],
     ignorePatterns: [
         'dist/',
-        'node_modules/',
-        'packages/schema/src/index.tsx'
+        'node_modules/'
     ],
     overrides: [
         {

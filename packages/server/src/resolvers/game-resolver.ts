@@ -1,6 +1,5 @@
-import { GameResolvers } from '@game-discovery/schema';
-
 import { Context } from '../context';
+import { GameResolvers } from '../schema';
 
 type GameResolver = GameResolvers<Context>;
 

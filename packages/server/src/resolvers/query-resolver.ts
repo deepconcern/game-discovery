@@ -1,6 +1,5 @@
-import { Game, QueryResolvers } from '@game-discovery/schema';
-
 import { Context } from '../context';
+import { Game, QueryResolvers } from '../schema';
 
 type QueryResolver = Required<QueryResolvers<Context>>;
 

@@ -6,5 +6,5 @@ npx apollo client:codegen src/graphql-operations \
 --outputFlat \
 --includes=src/**/* \
 --excludes=src/graphql-operations/* \
---localSchemaFile=../../schema.graphql \
+--localSchemaFile=../schema.graphql \
 --target=typescript

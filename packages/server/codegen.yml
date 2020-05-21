@@ -1,11 +1,7 @@
 overwrite: true
 schema: "schema.graphql"
 generates:
-  src/index.tsx:
+  src/schema.ts:
     plugins:
       - "typescript"
       - "typescript-resolvers"
-      - "typescript-react-apollo"
-  ./graphql.schema.json:
-    plugins:
-      - "introspection"

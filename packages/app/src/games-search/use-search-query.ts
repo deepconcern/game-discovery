@@ -1,12 +1,14 @@
-import { ApolloError } from 'apollo-client';
 import { useContext } from 'react';
-import { Game } from '@game-discovery/schema';
+
+import {
+    GamesQuery_games as Game
+} from '../graphql-operations/GamesQuery';
 
 import { GamesSearchContext } from './games-search-context';
 
 export type SearchQuery = {
-    error?: ApolloError,
-    games?: Game[],
+    error?: Error | null,
+    games?: Game[] | null,
     loading: boolean,
     searchQuery: string,
 };

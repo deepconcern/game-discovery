@@ -1,5 +1,6 @@
-import { Game } from '@game-discovery/schema';
 import React, { FC } from 'react';
+
+import { GamesQuery_games as Game } from './graphql-operations/GamesQuery';
 
 import { useSearchQuery } from './games-search';
 

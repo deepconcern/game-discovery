@@ -15,8 +15,8 @@
     "deploy-server": "./scripts/deploy-server.sh",
     "format": "./scripts/format/sh",
     "lint": "./scripts/lint.sh",
-    "schema:codegen": "yarn workspace @game-discovery/schema codegen",
     "server:build": "yarn workspace @game-discovery/server build",
+    "server:codegen": "yarn workspace @game-discovery/server codegen",
     "server:start": "yarn workspace @game-discovery/server start"
   },
   "workspaces": [
