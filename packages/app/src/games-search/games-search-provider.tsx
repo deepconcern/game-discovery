@@ -1,4 +1,4 @@
-import { useLazyQuery } from '@apollo/react-hooks';
+import { useApolloClient } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import React, { FC, useCallback, useEffect, useState } from 'react';
 
@@ -36,36 +36,41 @@ const gamesQuery = gql`
 
 export const GamesSearchProvider: FC = ({ children }) => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [fireGamesQuery, { data, loading, error }] = useLazyQuery<
-        GamesQuery,
-        GamesQueryVariables
-    >(gamesQuery, {
-        variables: {
-            backgroundImageHeight: BACKGROUND_IMAGE_HEIGHT,
-            backgroundImageWidth: BACKGROUND_IMAGE_WIDTH,
-            searchQuery,
-        },
-    });
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<Error | null>(null);
+    const [data, setData] = useState<GamesQuery | null>(null);
+    const apolloClient = useApolloClient();
     const debouncedFireGamesQuery = useCallback(
-        debounce(fireGamesQuery, REFETCH_GAMES_DEBOUNCE),
-        []
+        debounce((searchQuery: string) => {
+            apolloClient.query<GamesQuery, GamesQueryVariables>({
+                query: gamesQuery,
+                variables: {
+                    backgroundImageHeight: BACKGROUND_IMAGE_HEIGHT,
+                    backgroundImageWidth: BACKGROUND_IMAGE_WIDTH,
+                    searchQuery,
+                },
+            }).then(({ data }) => {
+                setLoading(false);
+                setData(data);
+            }).catch(error => {
+                setError(error instanceof Error ? error : Error(error));
+            });
+            setLoading(true);
+        }, REFETCH_GAMES_DEBOUNCE),
+        [apolloClient, setData, setError, setLoading]
     );
     const updateSearchQuery = useCallback((newSearchQuery: string) => {
-        if (newSearchQuery === searchQuery) {
-            return;
-        }
-
         setSearchQuery(newSearchQuery);
 
         if (newSearchQuery.length < MIN_SEARCH_QUERY_LENGTH) {
             return;
         }
-        debouncedFireGamesQuery();
-    }, []);
+        debouncedFireGamesQuery(newSearchQuery);
+    }, [debouncedFireGamesQuery, setSearchQuery]);
 
     useEffect(() => {
-        fireGamesQuery();
-    }, []);
+        debouncedFireGamesQuery('');
+    }, [debouncedFireGamesQuery]);
 
     const providerValue = {
         games: data?.games,

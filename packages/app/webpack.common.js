@@ -14,10 +14,6 @@ module.exports = {
                 loader: 'babel-loader',
                 test: /\.(js|ts)x?$/,
             },
-            {
-                test:/\.pug$/,
-                loader: 'pug-loader'
-            },
         ],
     },
     output: {
@@ -36,7 +32,7 @@ module.exports = {
         }),
         new HTMLWebpackPlugin({
             inject: 'body',
-            template: resolve(TEMPLATES_DIR, 'index.pug'),
+            template: resolve(TEMPLATES_DIR, 'index.html'),
         }),
     ],
     resolve: {

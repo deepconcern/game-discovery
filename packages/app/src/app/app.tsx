@@ -11,7 +11,7 @@ console.log('process', process);
 
 const client = new ApolloClient({
     cache: new InMemoryCache(),
-    link: new HttpLink({ uri: `${process.env['GAME_DISCOVERY_SERVER_URL']}` }),
+    link: new HttpLink({ uri: `${process.env['SERVER_URL']}` }),
 });
 
 export const App: FC = () => {

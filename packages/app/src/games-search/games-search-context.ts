@@ -1,11 +1,10 @@
 import { Game } from '@game-discovery/schema';
-import { ApolloError } from 'apollo-client';
 import { createContext } from 'react';
 
 export type GamesSearchData = {
-    error?: ApolloError,
+    error?: Error | null,
     loading: boolean,
-    games?: Game[],
+    games?: Game[] | null,
     searchQuery: string,
     updateSearchQuery: (newSearchQuery: string) => void,
 };
