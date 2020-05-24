@@ -12,11 +12,11 @@
     "app:deploy": "yarn workspace @game-discovery/app deploy",
     "app:start": "yarn workspace @game-discovery/app start",
     "clean": "rm -rf node_modules/ && rm -rf packages/*/node_modules/",
-    "deploy-server": "./scripts/deploy-server.sh",
     "format": "./scripts/format/sh",
     "lint": "./scripts/lint.sh",
     "server:build": "yarn workspace @game-discovery/server build",
     "server:codegen": "yarn workspace @game-discovery/server codegen",
+    "server:deploy": "yarn workspace @game-discovery/server deploy",
     "server:start": "yarn workspace @game-discovery/server start"
   },
   "workspaces": [

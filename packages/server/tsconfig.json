@@ -1,9 +1,15 @@
 {
     "compilerOptions": {
         "allowSyntheticDefaultImports": true,
+        "lib": [ "DOM", "ES2020" ],
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
         "outDir": "dist",
         "rootDir": "src",
         "sourceMap": true,
-    },
-    "extends": "../../tsconfig.json"
+        "strict": true,
+        "target": "ES2020",
+    }
 }

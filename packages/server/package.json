@@ -7,28 +7,21 @@
   "scripts": {
     "build": "./scripts/build.sh",
     "codegen": "./scripts/codegen.sh",
+    "deploy": "./scripts/deploy.sh",
     "prestart": "./scripts/prestart.sh",
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@types/uuid": "^7.0.3",
     "apollo-datasource-rest": "^0.8.1",
     "apollo-server": "^2.13.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
     "graphql": "^14.0.0",
-    "graphql-tag": "^2.10.3",
-    "pug": "^2.0.4",
-    "uuid": "^8.0.0"
+    "graphql-tag": "^2.10.3"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.13.4",
-    "@graphql-codegen/typescript": "1.13.4",
-    "@graphql-codegen/typescript-resolvers": "1.13.4",
-    "@types/cors": "^2.8.6",
-    "@types/express": "^4.17.6",
+    "@graphql-codegen/cli": "^1.14.0",
+    "@graphql-codegen/typescript": "^1.14.0",
+    "@graphql-codegen/typescript-resolvers": "^1.14.0",
     "@types/node": "^13.13.4",
-    "@types/pug": "^2.0.4",
     "typescript": "^3.8.3"
   }
 }
