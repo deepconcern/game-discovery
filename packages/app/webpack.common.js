@@ -1,6 +1,10 @@
+const CopyPlugin = require('copy-webpack-plugin');
+const { config } = require('dotenv');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const { resolve } = require('path');
+const { join, resolve } = require('path');
 const { DefinePlugin } = require('webpack');
+
+config();
 
 const TEMPLATES_DIR = resolve(__dirname, 'templates');
 
@@ -17,20 +21,27 @@ module.exports = {
         ],
     },
     output: {
-        chunkFilename: 'js/[name].bundle.js',
-        filename: 'js/[name].bundle.js',
-        path: resolve(__dirname, 'dist'),
+        chunkFilename: '[name].bundle.js',
+        filename: '[name].bundle.js',
+        path: resolve(__dirname, '..', '..', 'public'),
+        publicPath: 'public/'
     },
     plugins: [
+        new CopyPlugin({
+            patterns: [
+                { from: 'assets', to: '.' }
+            ]
+        }),
         new DefinePlugin({
             'process.env.SERVER_URL': JSON.stringify(
-                process.env.SERVER_URL || 'http://localhost:4000/graphql'
+                process.env.SERVER_URL
             ),
             'process.env.NODE_ENV': JSON.stringify(
-                process.env.NODE_ENV === 'production' ? 'production' : 'development'
+                process.env.NODE_ENV
             ),
         }),
         new HTMLWebpackPlugin({
+            filename: process.env.NODE_ENV === 'production' ? join('..', 'index.html') : 'index.html',
             inject: 'body',
             template: resolve(TEMPLATES_DIR, 'index.html'),
         }),
