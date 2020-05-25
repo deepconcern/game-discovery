@@ -2,6 +2,4 @@
 .DS_Store
 .env
 dist/
-index.html
 node_modules/
-public/
